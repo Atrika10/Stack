@@ -16,6 +16,20 @@ public class PushAtBottom {
         }
         return St;
     }
+
+    public static Stack<Integer> insertAtBottomRecursion(Stack<Integer> St, int X){
+        // base case
+        if (St.isEmpty()) {
+            St.push(X);
+            return St;
+        }
+        // work
+        int top = St.pop(); // first pop the element 
+        insertAtBottomRecursion(St, X);     // I believe insert function will push the given data in the satck
+        St.push(top);   // I'll push my element also
+        
+        return St;
+    }
     public static void main(String[] args) {
         Stack<Integer> St = new Stack<>();
         St.push(4);
